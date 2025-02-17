@@ -8,7 +8,8 @@ package b08_producter_consumer;
  *
  * @author nvmin
  */
-public class Consumer extends Thread{
+public class Consumer extends Thread {
+
     private int id;
     private Buffer buffer;
 
@@ -19,11 +20,11 @@ public class Consumer extends Thread{
 
     @Override
     public void run() {
-        while(true) {
-            if(buffer.getSize()>0) {
+        while (true) {
+            if (buffer.getSize() > 0) {
                 try {
                     buffer.removeProduct(this.id);
-                    sleep((long) (Math.random()*1000));
+                    sleep((long) (Math.random() * 1000));
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
